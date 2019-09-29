@@ -1,0 +1,9 @@
+{
+  "/api/*": {
+      "target": "http://localhost:2500",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug",
+      "pathRewrite": { "^/api" : "" } //important for proxy api call
+  }
+}
