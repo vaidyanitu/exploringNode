@@ -11,4 +11,8 @@ export class SigninService {
   getData() {
     return this.http.get('api/');
   }
+
+  signup(user: object) {
+    return this.http.post('api/signup', user);
+  }
 }
