@@ -3,7 +3,7 @@
   <form #SignupForm="ngForm" (submit)="signup(SignupForm.valid)" class="container">
     <div class="col-lg-4 offset-lg-4">
         <div *ngIf="this.SignupForm.submitted && !this.SignupForm.valid" class="alert alert-danger">Please fill all the fields in the form properly!</div>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="name">Full name</label>
         <input type="text" class="form-control" #name=ngModel [(ngModel)]="credentials.name" name="name" placeholder="Enter your name" required >
         <div *ngIf="name.invalid && (name.dirty || name.touched)"
@@ -12,7 +12,7 @@
           * Name is required.
         </div>
       </div>
-      </div>
+      </div> -->
       <div class="form-group">
         <label for="email">Email address</label>
         <input type="email" class="form-control" #email="ngModel" [(ngModel)]="credentials.email" name="email" placeholder="Enter email" required>
