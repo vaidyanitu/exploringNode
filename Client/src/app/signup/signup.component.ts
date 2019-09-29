@@ -10,24 +10,26 @@ import { SigninService } from '../services/signin.service';
 export class SignupComponent implements OnInit {
 credentials: TokenPayLoad = {
   email: '',
-  password: '',
-  name: ''
+   password: ''
+  // , name: ''
 };
-//submitted = false;
+// submitted = false;
   constructor(private signinService: SigninService) { }
 
   ngOnInit() {
   }
 
   signup(isvalid: boolean) {
-    //this.submitted = true;
-    if(isvalid) {
+    // this.submitted = true;
+    if (isvalid) {
     console.log('signup submitted');
     console.log(this.credentials);
-    let x = this.signinService.getData().subscribe(data => {
+    this.signinService.getData().subscribe(data => {
       console.log(data);
     });
-    console.log(x);
+    this.signinService.signup(this.credentials).subscribe(data => {
+      console.log(data);
+    });
     }
   }
 
